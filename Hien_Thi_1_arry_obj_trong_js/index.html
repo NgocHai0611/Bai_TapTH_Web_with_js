@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hiển thị mảng đối tượng</title>
+</head>
+
+<body>
+    <h1>Danh sách người dùng</h1>
+    <ul id="userList"></ul>
+
+
+    <style>
+        li {
+            color: red;
+            list-style: none;
+        }
+    </style>
+
+    <script>
+        // Tạo một mảng đối tượng
+        const users = [{
+            name: "Nguyen Hai",
+            age: 25
+        }, {
+            name: "Hieu Nhan",
+            age: 30
+        }, {
+            name: "Quoc truong",
+            age: 35
+        }];
+
+        // Lặp qua từng đối tượng trong mảng và hiển thị lên giao diện
+        const userListElement = document.getElementById("userList");
+        users.forEach(user => {
+            const liElement = document.createElement("li");
+            liElement.textContent = `Tên: ${user.name}   , Tuổi: ${user.age}`;
+            userListElement.appendChild(liElement);
+        });
+    </script>
+</body>
+
+</html>
